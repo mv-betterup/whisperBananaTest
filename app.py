@@ -1,5 +1,5 @@
 import torch
-import stable_whisper as whisper
+import whisper
 import os
 import base64
 from io import BytesIO
