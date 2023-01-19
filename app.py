@@ -1,7 +1,7 @@
 import json
 
 import torch
-import stable_whisper as whisper
+import stable_whisper
 import os
 import base64
 from io import BytesIO
@@ -11,7 +11,7 @@ from io import BytesIO
 def init():
     global model
     
-    model = whisper.load_model("base")
+    model = stable_whisper.load_model("base")
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
@@ -34,9 +34,9 @@ def inference(model_inputs:dict) -> dict:
     wordResults = None
     sentResults = None
     if getWordTranscript is not None:
-        wordResults = whisper.results_to_word_srt(result)
+        wordResults = stable_whisper.results_to_word_srt(result)
     if getSentenceTranscript is not None:
-        sentResults = whisper.results_to_sentence_srt(result)
+        sentResults = stable_whisper.results_to_sentence_srt(result)
     output = {"text":result["text"], "Word Transcription":wordResults, "Sentence Transcription":sentResults}
     os.remove("input.mp3")
     # Return the results as a dictionary

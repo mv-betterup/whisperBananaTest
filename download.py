@@ -3,11 +3,11 @@
 
 # In this example: A Huggingface BERT model
 
-import stable_whisper as whisper
+import stable_whisper
 import torch
 
 def download_model():
-    model = whisper.load_model("base")
+    model = stable_whisper.load_model("base")
 
 if __name__ == "__main__":
     download_model()
