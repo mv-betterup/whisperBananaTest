@@ -7,7 +7,7 @@ import stable_whisper
 import torch
 
 def download_model():
-    model = stable_whisper.load_model("base")
+    model = stable_whisper.load_model("medium")
 
 if __name__ == "__main__":
     download_model()

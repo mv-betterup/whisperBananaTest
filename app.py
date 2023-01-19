@@ -11,7 +11,7 @@ from io import BytesIO
 def init():
     global model
     
-    model = stable_whisper.load_model("base")
+    model = stable_whisper.load_model("medium")
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
