@@ -3,7 +3,7 @@
 
 # In this example: A Huggingface BERT model
 
-import whisper
+import stable_whisper as whisper
 import torch
 
 def download_model():
